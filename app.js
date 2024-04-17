@@ -33,7 +33,7 @@ app.use(passport.session());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.locals.error = req.flash('error')
   res.locals.success = req.flash('success')
   res.locals.currentUser = req.user;
@@ -46,7 +46,8 @@ app.use(postRoute);
 app.use(commentRoute);
 app.use(authRoute);
 
-mongoose.connect("mongodb://localhost/croud_head", { useNewUrlParser: true });
+const mongodbConnection = "mongodb+srv://nodejsblog:T0u39VY8yx6RLxFp@cluster0.vokhvfj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+mongoose.connect(mongodbConnection, { useNewUrlParser: true });
 
 /* TODO : 
             (Optional) Add mailchimpu
@@ -54,6 +55,6 @@ mongoose.connect("mongodb://localhost/croud_head", { useNewUrlParser: true });
 
 app.set("view engine", "ejs");
 
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log("Server Started at Port 3000");
 });
