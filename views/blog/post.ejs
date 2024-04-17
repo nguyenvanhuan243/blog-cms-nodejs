@@ -17,9 +17,12 @@
           </div>
           <% if(currentUser && post.author.id.equals(currentUser._id)){ %>
           <div class="card-action">
-            <a href="/blog/<%= post._id %>/comment/<%= item._id %>/edit" class="waves-effect btn-small blue waves-light btn"><i class="material-icons left">edit</i>Edit</a>
-            <form style="display:inline" action="/blog/<%= post._id %>/comment/<%= item._id %>?_method=DELETE" method="POST">
-              <button class="waves-effect btn-small red waves-light btn"><i class="material-icons left">delete</i>Delete</button>
+            <a href="/blog/<%= post._id %>/comment/<%= item._id %>/edit"
+              class="waves-effect btn-small blue waves-light btn"><i class="material-icons left">edit</i>Edit</a>
+            <form style="display:inline" action="/blog/<%= post._id %>/comment/<%= item._id %>?_method=DELETE"
+              method="POST">
+              <button class="waves-effect btn-small red waves-light btn"><i
+                  class="material-icons left">delete</i>Delete</button>
             </form>
           </div>
           <% }else{} %>
@@ -32,9 +35,7 @@
   <% if(currentUser && post.author.id.equals(currentUser._id)){ %>
   <!-- Floating Action Button -->
   <div class="fixed-action-btn">
-    <a class="btn-floating btn-large red"
-      ><i class="large material-icons">mode_edit</i></a
-    >
+    <a class="btn-floating btn-large red"><i class="large material-icons">mode_edit</i></a>
     <ul>
       <li>
         <form action="/blog/<%= post._id %>?_method=delete" method="POST">
@@ -44,19 +45,13 @@
         </form>
       </li>
       <li>
-        <a class="btn-floating yellow darken-1"
-          ><i class="material-icons">format_quote</i></a
-        >
+        <a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a>
       </li>
       <li>
-        <a class="btn-floating green" href="/blog/<%= post._id %>/edit"
-          ><i class="material-icons">edit</i></a
-        >
+        <a class="btn-floating green" href="/blog/<%= post._id %>/edit"><i class="material-icons">edit</i></a>
       </li>
       <li>
-        <a class="btn-floating blue"
-          ><i class="material-icons">attach_file</i></a
-        >
+        <a class="btn-floating blue"><i class="material-icons">attach_file</i></a>
       </li>
     </ul>
   </div>

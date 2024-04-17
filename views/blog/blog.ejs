@@ -8,14 +8,13 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-            <h4><a href="#"><%= item.title %></a></h4>
-            <span class="post-card-date">Date: <%= item.created.toLocaleDateString() %>&nbsp; &nbsp; By: <%= item.author.username %></span>
-            <p><%= item.content.slice(0, 150) %>...</p>
+          <h4><a href="#"><%= item.title %></a></h4>
+          <span class="post-card-date">Date: <%= item.created.toLocaleDateString() %>&nbsp; &nbsp; By:
+            <%= item.author.username %></span>
+          <p><%= item.content.slice(0, 150) %>...</p>
         </div>
         <div class="card-action">
-          <a class="" href="/blog/<%= item._id %>"
-            >Read More <i class="angle double right icon"></i
-          ></a>
+          <a class="" href="/blog/<%= item._id %>">Read More <i class="angle double right icon"></i></a>
         </div>
       </div>
     </div>
