@@ -47,7 +47,10 @@ app.use(commentRoute);
 app.use(authRoute);
 
 const mongodbConnection = "mongodb+srv://nodejsblog:T0u39VY8yx6RLxFp@cluster0.vokhvfj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-mongoose.connect(mongodbConnection, { useNewUrlParser: true });
+// mongoose.connect(mongodbConnection, { useNewUrlParser: true });
+mongoose.connect(
+  mongodbConnection
+)
 
 /* TODO : 
             (Optional) Add mailchimpu
