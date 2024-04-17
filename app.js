@@ -9,7 +9,6 @@ var express = require("express"),
   authRoute = require("./routes/auth"),
   passport = require("passport"),
   localStrategy = require("passport-local"),
-  passportLocalMongoose = require("passport-local-mongoose"),
   User = require("./models/user"),
   flash = require('connect-flash');
 
@@ -46,29 +45,17 @@ app.use(postRoute);
 app.use(commentRoute);
 app.use(authRoute);
 
-const mongodbConnection = "mongodb+srv://nodejsblog:T0u39VY8yx6RLxFp@cluster0.vokhvfj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-// mongoose.connect(mongodbConnection, { useNewUrlParser: true });
-// mongoose.connect(
-//   mongodbConnection
-// )
 // Connect to MongoDB using Mongoose
+const mongodbConnection = "mongodb+srv://nodejsblog:T0u39VY8yx6RLxFp@cluster0.vokhvfj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 mongoose.connect(mongodbConnection, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
-
-/* TODO : 
-            (Optional) Add mailchimpu
-*/
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((error) => console.error("Error connecting to MongoDB:", error));
 
 app.set("view engine", "ejs");
 
-app.listen(3000, function () {
+app.listen(3000, () => {
   console.log("Server Started at Port 3000");
 });
