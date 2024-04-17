@@ -30,3 +30,8 @@ yarn start
 git config user.name
 git config user.email
 ```
+
+### Start with docker
+```
+docker-compose up --build
+```
