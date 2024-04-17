@@ -48,9 +48,20 @@ app.use(authRoute);
 
 const mongodbConnection = "mongodb+srv://nodejsblog:T0u39VY8yx6RLxFp@cluster0.vokhvfj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 // mongoose.connect(mongodbConnection, { useNewUrlParser: true });
-mongoose.connect(
-  mongodbConnection
-)
+// mongoose.connect(
+//   mongodbConnection
+// )
+// Connect to MongoDB using Mongoose
+mongoose.connect(mongodbConnection, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
+  });
 
 /* TODO : 
             (Optional) Add mailchimpu
