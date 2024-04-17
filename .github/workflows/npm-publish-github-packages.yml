@@ -48,7 +48,8 @@ jobs:
         run: |
           docker push nguyenvanhuan243/blog_cms:latest
 
-      # - name: Deploy to Render Server (Master)
-      #   if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      #   run: |
-      #     curl -X GET https://
+      - name: Deploy to Render Server (Master)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          curl -X GET https://api.render.com/deploy/srv-cofjqbfsc6pc73fre3r0?key=Co8BORNM1vE # web service
+          curl -X GET https://api.render.com/deploy/srv-cofkb3f79t8c73c5d13g?key=Zlk0AZ7lOl8 # docker container
